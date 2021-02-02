@@ -23,13 +23,13 @@ $APPLICATION->IncludeComponent(
 ?>
 
 <? if ($APPLICATION->GetCurPage(false) === '/'): ?>
-	<div class="subscribe home">
+	<div class="subscribe home" style="display: none">
 <?elseif ($APPLICATION->GetCurPage(false) === '/magaziny/'):?>
-	<div class="subscribe magaziny">
+	<div class="subscribe magaziny" style="display: none">
 <?elseif ($APPLICATION->GetCurPage(false) === '/novosti/'):?>
-	<div class="subscribe novosti">
+	<div class="subscribe novosti" style="display: none">
 <?else:?>
-	<div class="subscribe">
+	<div class="subscribe" style="display: none">
 <? endif; ?>
 
 	<div class="container">
@@ -102,7 +102,7 @@ $APPLICATION->IncludeComponent(
 		</div>
 	</div>
 </div>
-<div class="footer">
+<div class="footer" style="display: none">
 	<div class="container">
 		<div class="row flex-footer">
 			<div class="footer-cols">
@@ -148,37 +148,63 @@ $APPLICATION->IncludeComponent(
 </div>
 
 
-        <div class="footer" style="display: none;">
+        <section class="subscribe_block">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <div class="subscribe_block-cont">
+                            <div class="subscribe_block-text">
+                                <div class="subscribe_block-title">Узнавайте о новостях<br>
+                                и <span>акциях</span> первыми</div>
+                                <div class="subscribe_block-descr">
+                                    Уведомления о самых выгодных предложениях на почту или в VK. Раз в месяц, не больше.
+                                </div>
+                                <a href="https://vk.com/solombala_mall" target="_blank">
+                                    <div class="subscribe_block-button">Подписаться на новости</div>
+                                </a>
+
+                            </div>
+                            <div class="subscribe_block-hand">
+                                <img src="/local/templates/solombalamall/img/hand.png" alt="">
+                            </div>
+                            <div class="subscribe_block-close">
+                                <img src="/local/templates/solombalamall/img/close_button.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-xs-12">
                         <div class="footer_logo"> <a href="/"><img alt="logo" src="/local/templates/solombalamall/img/logo/logo_white.svg" /></a></div>
                         <div class="footer_contact">
-                            <span>Архангельск, Советская, 25</span>
+                            <span class="hover_link" style="cursor:pointer;" data-toggle="modal" data-target="#locationModalOpen">Архангельск, Советская, 25</span>
                             <span>ТРЦ 10:00 - 21:00</span>
                             <span>Лента 09:00 - 23:00</span>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-12">
                         <ul class="footer_menu">
                             <li><a href="#">О центре</a></li>
-                            <li><a href="#">Карта центра</a></li>
+                            <li><a href="/magaziny/?show=map">Карта центра</a></li>
                             <li><a href="#">Контакты</a></li>
                             <li>
                                 <a href="https://www.instagram.com/solombala_mall/" target="_blank">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px">
-                                        <image x="0px" y="0px" width="30px" height="30px" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiDBMMFy+3TEXyAAAB3ElEQVQ4y6WVsUtbURTGf3kvBZss7WjBxTEurmmgcyq0/4Hg1Emo/imFQjvppkOdOghSFwWpgoNQOoigQwKOzRITaV5+HXLz8l5TrOGdM91zzve+c+9957slCRazwgpLLPCcOcpElEJGhgzo84sWP9lnnyTNiNj0ysfalc0RqiTAOh+IAOjRokOf3wwZN1Ui4glzPGOBpwAMec/HEXPTRNU9G0bygEc23FM1sSkYh4Y3H4RlfTM0H+PbwPp/UM2v7vpCAvsb/Kxq45/lZcuZ1Zmqu2JD1U8RNaDHd/L2km3a3HNPm23qAFQAqAKn9IAlvFEvc3xVd6auZ8eqr/zhqTURL9Ub7KhnOeh5AHQ98cRuWJ1b/WsLHeyrR5nwiLXjmrGIsWt2Avuk6kjt40A9TIP1AF3MbWQxwOtp5FAdRETAMD2odwBscJ07vms2MlkCIkLVg/SLbbUbGs56bFdtp+sD1SjHUGYeuEinZmIJF8A85WwwooDlwQNugWXiqbqYZeCWQR4spGMP34AKq1PgVSohOx5TsNBVFfxJCv2ejx+MbE0YjGP1bkp+6m7ZNjGx5VZmr2M5ulOPZxGDiQcxmEWGJp7KULmIAE6k98us0ltY9As+N6NxfD3rQ/cHP7SMz/T6jfAAAAAASUVORK5CYII="></image>
-                                    </svg>
+                                    <div class="social_icon-inst"></div>
                                 </a>
                                 <a href="https://vk.com/solombala_mall" target="_blank">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34px" height="20px">
-                                        <image x="0px" y="0px" width="34px" height="20px" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAQAAABCbSf5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiDBMMFwb1/t2eAAACeUlEQVQ4y4XUXYiVVRTG8WfOfDijklo6KU0xUdmBKboo8KNUOH0IkUGQSGRQQleRQl1UJHXRjVGE4EeBRHRR0ReFF2WEEQ1hIRSOZOrkRFrT6NSFMmUdm/Pr4rynGc9M+Lw3+1lr7T/7XYu9WyRrsyJtqWskr+aXJEkly9Kd9pzLqezPp1FU9OSBdKclpZRSyh/Znf6oOF/fu0iXd5uir2kVMcvBpsxZ5bbMSiLvZzRJS9alnEp+yL1Jkr0ZTCmX5448mBfzXZJKrsuZvJfx1FLLzKxPZy6NmY7iSRGxE7u1ed5veFxEqxNYJeJNvF3Uxmo1v1sQ8Rh+dYmIW/C3a8VmfCRitp+xQvQ4jTUFotVX2CURcw3jqSKxD6+LDegXMccIloiXcEhHAdmIP5XrkHgaIxaIuAs1N7sbX4uYZxRXu0kV6wvEjcbwnDQgFxvGliL9Do7Ygc+Lk4yq2eAI9iiJ6HYU/WZMQOJRjFksYqGhYnzbi18cQA0/uUJEu48x7Mr67gak0wA+LFyf/aoG9RX+IefwjesL/wT+cmtjSg1IrAb3Fa5D2RwT2Rus1FWs2w1i80Q2kwp34ZReucDX6kvstWg6yDyD+ELnBTErjeGga6ZCYrmzeEvblG1rPWPZJF9xEkP1LjUX3w8+MP+86CZQs7U+0qJLx3Dc4qmQeNg/OOye4t5GDOAw+GSiExY5gH26WhrPxCStyc70JPk2e3IopzMjL2d+lqQvr6QjQ9mWY5GkmqV5NqUsnb5xl9nmTNO7URa3+VGzxvROd5K6enNnVuWqzE5SzRt5IbUkC/NIbs/c/6qOZ0s++39IQx1JxjM+JVZXNUn+BahY6ihitvhYAAAAAElFTkSuQmCC"></image>
-                                    </svg>
+                                    <div class="social_icon-vk"></div>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-12">
                         <form action="" class="footer_form">
                             <div class="footer_form-title">Обратная связь</div>
                             <input type="text" name="" placeholder="Введите ваше имя" required>
@@ -186,6 +212,9 @@ $APPLICATION->IncludeComponent(
                             <textarea name="" id="" placeholder="Введите ваше обращение" required></textarea>
                             <button type="submit">Отправить</button>
                         </form>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="footer_copyright">АО "СОЛОМБАЛА МОЛЛ" / 2020</div>
                     </div>
                 </div>
             </div>
@@ -227,29 +256,8 @@ $(document).ready(function(){
 	}
 });
 
-$(window).load(function(){
 
-    $(".icon-menu").on('click', function() {
-    	$(".mobile-menu").toggleClass('open');
-    	$("body").toggleClass('open-menu');
-    	$(this).toggleClass('clicked');
-    });
-     $(".mobile-menu").swipe({
-          swipeStatus:function(event, phase, direction, distance, duration, fingers)
-              {
-                  if (phase=="move" && direction =="right") {
-					$(".mobile-menu").toggleClass('open');
-					$('.icon-menu').removeClass('clicked');
-					$("body").removeClass('open-menu');
-                       return false;
-                  }
-                  if (phase=="move" && direction =="left") {
-					$(".mobile-menu").addClass("open");
-                       return false;
-                  }
-              }
-      });
-  });
+
 
 
 // $(document).ready(function(){
@@ -279,6 +287,9 @@ $(window).load(function(){
 // 		speed: 1000
 // 	});
 // });
+
 </script>
+
+       
 <script src="/prototip/js/bootstrap.min.js"></script>
 <?require($_SERVER["DOCUMENT_ROOT"]."/include/modal_popoup.php");?>
